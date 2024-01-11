@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main className='container mx-auto'>
       <h1 className='text-2xl text-center text-gray-800 mt-8'>Bem-vindo ao Lista Rango</h1>
-      <form>
+      <form data-testid="home-form">
         <input 
           type="text" 
           className='
