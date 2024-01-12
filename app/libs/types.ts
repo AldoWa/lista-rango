@@ -7,3 +7,21 @@ export enum Days {
   SEXTA = 6,
   SABADO = 7
 }
+
+interface Hour {
+  from: string;
+  to: string;
+  days: Days[];
+}
+
+export interface Restaurant {
+  id: number;
+  name: string;
+  address: string;
+  image: string;
+  hours: Hour[];
+}
+
+export interface RestaurantResponse {
+  data: Restaurant[];
+}
