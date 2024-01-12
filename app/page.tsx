@@ -1,22 +1,12 @@
 
 import { Metadata } from 'next';
 import { CardRestaurant } from './ui/card-restaurant';
-import { RestaurantResponse } from './libs/types';
-import { NextResponse } from 'next/server';
-
+import { getRestaurants } from './libs/requests';
  
 export const metadata: Metadata = {
   title: 'Lista Rango',
   description: 'Lista Rango, onde irá listar os melhores restaurantes da região.',
 };
-
-const getRestaurants = async (): Promise<RestaurantResponse> => {
-  const response = await fetch('http://localhost:3000/restaurants') as NextResponse<RestaurantResponse>;
-  if (!response.ok) {
-    throw new Error('Error in get restaurants')
-  }
-  return response.json();
-}
 
 export default async function Home() {
   const { data: restaurants } = await getRestaurants();

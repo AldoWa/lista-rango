@@ -11,14 +11,18 @@ exports[`Page Should match snapshot 1`] = `
       Bem-vindo ao Lista Rango
     </h1>
     <form
+      class="flex justify-center"
       data-testid="home-form"
     >
       <input
-        class=" shadow-md px-8 w-full  rounded-full  bg-slate-100 h-10  focus:outline-none m-8 "
+        class=" shadow-md px-8 w-full  rounded-full  bg-slate-100 h-10  focus:outline-none my-8 max-w-4xl "
         placeholder="Buscar estabelecimento"
         type="text"
       />
     </form>
+    <div
+      class="grid grid-cols-3 gap-9"
+    />
   </main>
 </div>
 `;
