@@ -9,6 +9,7 @@ describe('card-restaurant', () => {
       name='Restaurant 1'
       isOpen={true}
       photoSrc='https://via.placeholder.com/112x112'
+      id={1}
     />)
     
     const restaurantContainer = screen.getByTestId('restaurant-card')
@@ -32,6 +33,7 @@ describe('card-restaurant', () => {
       name='Restaurant 1'
       isOpen={false}
       photoSrc='https://via.placeholder.com/112x112'
+      id={1}
     />)
     
     const restaurantOpened = screen.getByTestId('restaurant-opened')
@@ -44,7 +46,8 @@ describe('card-restaurant', () => {
   })
 
   it('Should match snapshot', async () => {
-    const { container } = render(<CardRestaurant 
+    const { container } = render(<CardRestaurant
+      id={1} 
       address='Address 1'
       name='Restaurant 1'
       isOpen={false}

@@ -6,7 +6,7 @@ exports[`card-restaurant Should match snapshot 1`] = `
     aria-label="Go to the restaurant"
     class="shadow-md flex items-center  rounded relative  h-28 "
     data-testid="restaurant-card"
-    href="/"
+    href="/restaurants/1/menu"
   >
     <img
       alt="Restaurant Logo"

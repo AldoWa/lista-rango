@@ -20,7 +20,7 @@ export function CardRestaurant({
   photoSrc,
   id,
   ...props
-}: CardRestaurantProps) {
+}: Readonly<CardRestaurantProps>) {
   const [finalSrc, setFinalSrc] = useState("");
 
   function changeLoadStatus(e: HTMLImageElement) {
