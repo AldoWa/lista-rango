@@ -12,7 +12,7 @@ export default async function Home() {
   const { data: restaurants } = await getRestaurants();
 
   return (
-    <main className='container mx-auto'>
+    <>
       <h1 className='text-2xl text-center text-gray-800 mt-8'>Bem-vindo ao Lista Rango</h1>
       <form data-testid="home-form" className='flex justify-center'>
         <input 
@@ -45,6 +45,6 @@ export default async function Home() {
           })
         }
       </div>
-    </main>
+    </>
   )
 }

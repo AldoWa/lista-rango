@@ -2,123 +2,119 @@
 
 exports[`Page Should match snapshot 1`] = `
 <div>
-  <main
-    class="container mx-auto"
+  <h1
+    class="text-2xl text-center text-gray-800 mt-8"
   >
-    <h1
-      class="text-2xl text-center text-gray-800 mt-8"
+    Bem-vindo ao Lista Rango
+  </h1>
+  <form
+    class="flex justify-center"
+    data-testid="home-form"
+  >
+    <input
+      class=" shadow-md px-8 w-full  rounded-full  bg-slate-100 h-10  focus:outline-none my-8 max-w-4xl "
+      placeholder="Buscar estabelecimento"
+      type="text"
+    />
+  </form>
+  <div
+    class="grid grid-cols-3 gap-9"
+    role="list"
+  >
+    <a
+      aria-label="Go to the restaurant"
+      class="shadow-md flex items-center  rounded relative  h-28 "
+      data-testid="restaurant-card"
+      href="/restaurants/undefined/menu"
     >
-      Bem-vindo ao Lista Rango
-    </h1>
-    <form
-      class="flex justify-center"
-      data-testid="home-form"
-    >
-      <input
-        class=" shadow-md px-8 w-full  rounded-full  bg-slate-100 h-10  focus:outline-none my-8 max-w-4xl "
-        placeholder="Buscar estabelecimento"
-        type="text"
+      <img
+        alt="Restaurant Logo"
+        class="h-28"
+        data-nimg="1"
+        decoding="async"
+        height="112"
+        loading="lazy"
+        src="/_next/image?url=%2Fimg.jpg&w=256&q=100"
+        srcset="/_next/image?url=%2Fimg.jpg&w=128&q=100 1x, /_next/image?url=%2Fimg.jpg&w=256&q=100 2x"
+        style="color: transparent;"
+        width="112"
       />
-    </form>
-    <div
-      class="grid grid-cols-3 gap-9"
-      role="list"
+      <div
+        class="ml-6"
+      >
+        <p
+          class="text-base"
+          data-testid="restaurant-name"
+        >
+          Estrogonofe de frango
+        </p>
+        <p
+          class="text-xs"
+          data-testid="restaurant-address"
+        />
+      </div>
+      <div
+        aria-live="polite"
+        class="bg-purple-900 rounded-full w-14 h-14 flex items-center justify-center absolute -top-2 -right-4 "
+        role="status"
+      >
+        <span
+          class="text-white text-xs leading-3 text-center font-bold "
+          data-testid="restaurant-opened"
+          role="alert"
+        >
+          Aberto agora
+        </span>
+      </div>
+    </a>
+    <a
+      aria-label="Go to the restaurant"
+      class="shadow-md flex items-center  rounded relative  h-28 "
+      data-testid="restaurant-card"
+      href="/restaurants/2/menu"
     >
-      <a
-        aria-label="Go to the restaurant"
-        class="shadow-md flex items-center  rounded relative  h-28 "
-        data-testid="restaurant-card"
-        href="/restaurants/undefined/menu"
+      <img
+        alt="Restaurant Logo"
+        class="h-28"
+        data-nimg="1"
+        decoding="async"
+        height="112"
+        loading="lazy"
+        src="/_next/image?url=%2Fimg.jpg&w=256&q=100"
+        srcset="/_next/image?url=%2Fimg.jpg&w=128&q=100 1x, /_next/image?url=%2Fimg.jpg&w=256&q=100 2x"
+        style="color: transparent;"
+        width="112"
+      />
+      <div
+        class="ml-6"
       >
-        <img
-          alt="Restaurant Logo"
-          class="h-28"
-          data-nimg="1"
-          decoding="async"
-          height="112"
-          loading="lazy"
-          src="/_next/image?url=%2Fimg.jpg&w=256&q=100"
-          srcset="/_next/image?url=%2Fimg.jpg&w=128&q=100 1x, /_next/image?url=%2Fimg.jpg&w=256&q=100 2x"
-          style="color: transparent;"
-          width="112"
-        />
-        <div
-          class="ml-6"
+        <p
+          class="text-base"
+          data-testid="restaurant-name"
         >
-          <p
-            class="text-base"
-            data-testid="restaurant-name"
-          >
-            Estrogonofe de frango
-          </p>
-          <p
-            class="text-xs"
-            data-testid="restaurant-address"
-          />
-        </div>
-        <div
-          aria-live="polite"
-          class="bg-purple-900 rounded-full w-14 h-14 flex items-center justify-center absolute -top-2 -right-4 "
-          role="status"
+          Restaurant 2
+        </p>
+        <p
+          class="text-xs"
+          data-testid="restaurant-address"
         >
-          <span
-            class="text-white text-xs leading-3 text-center font-bold "
-            data-testid="restaurant-opened"
-            role="alert"
-          >
-            Aberto agora
-          </span>
-        </div>
-      </a>
-      <a
-        aria-label="Go to the restaurant"
-        class="shadow-md flex items-center  rounded relative  h-28 "
-        data-testid="restaurant-card"
-        href="/restaurants/2/menu"
+          Address 2
+        </p>
+      </div>
+      <div
+        aria-live="polite"
+        class="bg-purple-900 rounded-full w-14 h-14 flex items-center justify-center absolute -top-2 -right-4 "
+        role="status"
       >
-        <img
-          alt="Restaurant Logo"
-          class="h-28"
-          data-nimg="1"
-          decoding="async"
-          height="112"
-          loading="lazy"
-          src="/_next/image?url=%2Fimg.jpg&w=256&q=100"
-          srcset="/_next/image?url=%2Fimg.jpg&w=128&q=100 1x, /_next/image?url=%2Fimg.jpg&w=256&q=100 2x"
-          style="color: transparent;"
-          width="112"
-        />
-        <div
-          class="ml-6"
+        <span
+          class="text-white text-xs leading-3 text-center font-bold "
+          data-testid="restaurant-opened"
+          role="alert"
         >
-          <p
-            class="text-base"
-            data-testid="restaurant-name"
-          >
-            Restaurant 2
-          </p>
-          <p
-            class="text-xs"
-            data-testid="restaurant-address"
-          >
-            Address 2
-          </p>
-        </div>
-        <div
-          aria-live="polite"
-          class="bg-purple-900 rounded-full w-14 h-14 flex items-center justify-center absolute -top-2 -right-4 "
-          role="status"
-        >
-          <span
-            class="text-white text-xs leading-3 text-center font-bold "
-            data-testid="restaurant-opened"
-            role="alert"
-          >
-            Aberto agora
-          </span>
-        </div>
-      </a>
-    </div>
-  </main>
+          Aberto agora
+        </span>
+      </div>
+    </a>
+  </div>
 </div>
 `;
