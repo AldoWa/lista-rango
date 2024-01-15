@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`card-restaurant Should match snapshot 1`] = `
+<div>
+  <a
+    aria-label="Go to the restaurant"
+    class="shadow-md flex items-center  rounded relative  h-28 "
+    data-testid="restaurant-card"
+    href="/"
+  >
+    <img
+      alt="Restaurant Logo"
+      class="h-28"
+      data-nimg="1"
+      decoding="async"
+      height="112"
+      loading="lazy"
+      src="/_next/image?url=%2Fimg.jpg&w=256&q=100"
+      srcset="/_next/image?url=%2Fimg.jpg&w=128&q=100 1x, /_next/image?url=%2Fimg.jpg&w=256&q=100 2x"
+      style="color: transparent;"
+      width="112"
+    />
+    <div
+      class="ml-6"
+    >
+      <p
+        class="text-base"
+        data-testid="restaurant-name"
+      >
+        Restaurant 1
+      </p>
+      <p
+        class="text-xs"
+        data-testid="restaurant-address"
+      >
+        Address 1
+      </p>
+    </div>
+    <div
+      aria-live="polite"
+      class="bg-purple-900 rounded-full w-14 h-14 flex items-center justify-center absolute -top-2 -right-4 "
+      role="status"
+    >
+      <span
+        class="text-white text-xs leading-3 text-center font-bold "
+        data-testid="restaurant-opened"
+        role="alert"
+      >
+        Fechado
+      </span>
+    </div>
+  </a>
+</div>
+`;

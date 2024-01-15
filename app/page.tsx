@@ -29,12 +29,12 @@ export default async function Home() {
           placeholder='Buscar estabelecimento'
         />
       </form>
-      <div className='grid grid-cols-3 gap-9'>
+      <div className='grid grid-cols-3 gap-9' role="list">
         {
           restaurants.map((restaurant) => {
             return (
-              <CardRestaurant 
-                key={restaurant.id}
+              <CardRestaurant
+                key={'restaurant-card-' + restaurant.id}
                 name={restaurant.name}
                 address={restaurant.address}
                 isOpen={true}
