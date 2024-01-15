@@ -10,6 +10,7 @@ interface CardRestaurantProps {
   address: string;
   isOpen: boolean;
   photoSrc: string;
+  id: number;
 }
 
 export function CardRestaurant({
@@ -17,6 +18,7 @@ export function CardRestaurant({
   address,
   isOpen,
   photoSrc,
+  id,
   ...props
 }: CardRestaurantProps) {
   const [finalSrc, setFinalSrc] = useState("");
@@ -27,7 +29,7 @@ export function CardRestaurant({
 
   return (
     <Link
-      href="/"
+      href={`/restaurants/${id}/menu`}
       aria-label="Go to the restaurant"
       className="shadow-md flex items-center 
     rounded
