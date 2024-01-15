@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dish-card Should match snapshot 1`] = `
+<div>
+  <button
+    class="shadow-md flex flex-row max-[600px]:flex-col max-[600px]:items-center"
+    data-testid="dish-card-button"
+    type="button"
+  >
+    <img
+      alt="Prato Restaurant"
+      data-nimg="1"
+      decoding="async"
+      height="116"
+      loading="lazy"
+      src="/_next/image?url=%2Fimg.jpg&w=256&q=75"
+      srcset="/_next/image?url=%2Fimg.jpg&w=128&q=75 1x, /_next/image?url=%2Fimg.jpg&w=256&q=75 2x"
+      style="color: transparent;"
+      width="116"
+    />
+    <div
+      class="flex flex-col gap-y-2 p-4 text-slate-950 items-start"
+    >
+      <div
+        class="flex items-center w-full items-start max-[600px]:flex-col justify-between "
+      >
+        <h2
+          class="text-base font-medium"
+          data-testid="dish-card-title"
+        >
+          Prato
+        </h2>
+      </div>
+      <p
+        class="text-slate-950 font-normal text-sm text-left"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+      </p>
+      <span
+        class="text-cyan-700 text-base font-normal"
+        data-testid="dish-card-price"
+      >
+        R$ 20,00
+      </span>
+    </div>
+  </button>
+</div>
+`;
