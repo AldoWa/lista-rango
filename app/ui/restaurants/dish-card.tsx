@@ -15,8 +15,8 @@ export function DishCard({ onClickOpenModal, title, price, hasPromo }: DishCardP
     <button
       type="button"
       className="shadow-md flex flex-row max-[600px]:flex-col max-[600px]:items-center"
-      aria-live="polite"
       onClick={onClickOpenModal}
+      data-testid="dish-card-button"
     >
       <Image
         src={PratoRestaurant}
@@ -26,12 +26,13 @@ export function DishCard({ onClickOpenModal, title, price, hasPromo }: DishCardP
       />
       <div className="flex flex-col gap-y-2 p-4 text-slate-950 items-start">
         <div className="flex items-center w-full items-start max-[600px]:flex-col justify-between	">
-          <h2 className="text-base font-medium">{title}</h2>
+          <h2 className="text-base font-medium" data-testid="dish-card-title">{title}</h2>
           { hasPromo && (
             <span
               role="alert"
               aria-live="polite"
               className="flex bg-violet-800 py-1.5 px-4 rounded-xl max-h-5 flex items-center gap-x-1"
+              data-testid="dish-card-promo"
             >
               <Image src={AwardSvg} alt="award" width={9} height={12} />
               <span className="text-white text-xs font-bold">Promo Almoço</span>
@@ -41,7 +42,7 @@ export function DishCard({ onClickOpenModal, title, price, hasPromo }: DishCardP
         <p className="text-slate-950 font-normal text-sm text-left">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
         </p>
-        <span className="text-cyan-700 text-base font-normal">{price}</span>
+        <span className="text-cyan-700 text-base font-normal" data-testid="dish-card-price">{price}</span>
       </div>
     </button>
   );
