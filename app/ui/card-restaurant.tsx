@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Link from "next/link";
 import VeganImage from "@/public/vegan-restaurant.png";
@@ -17,11 +17,12 @@ export function CardRestaurant({
   address,
   isOpen,
   photoSrc,
+  ...props
 }: CardRestaurantProps) {
-  const [finalSrc, setFinalSrc] = useState('');
+  const [finalSrc, setFinalSrc] = useState("");
 
-  function changeLoadStatus(e: HTMLImageElement){
-    setFinalSrc(e.src)
+  function changeLoadStatus(e: HTMLImageElement) {
+    setFinalSrc(e.src);
   }
 
   return (
@@ -29,10 +30,12 @@ export function CardRestaurant({
       href="/"
       aria-label="Go to the restaurant"
       className="shadow-md flex items-center 
-        rounded
-        relative	
-        h-28
-      "
+    rounded
+    relative	
+    h-28
+    "
+      {...props}
+      data-testid="restaurant-card"
     >
       <Image
         src={finalSrc ? photoSrc : VeganImage}
@@ -40,13 +43,13 @@ export function CardRestaurant({
         width={112}
         height={112}
         className="h-28"
-        onLoad={e => changeLoadStatus(e.target as HTMLImageElement)}
+        onLoad={(e) => changeLoadStatus(e.target as HTMLImageElement)}
         quality={100}
       />
 
       <div className="ml-6">
-        <p className="text-base">{name}</p>
-        <p className="text-xs">{address}</p>
+        <p className="text-base" data-testid="restaurant-name">{name}</p>
+        <p className="text-xs" data-testid="restaurant-address">{address}</p>
       </div>
 
       <div
@@ -62,7 +65,7 @@ export function CardRestaurant({
           -top-2 -right-4
         "
       >
-        <span className="text-white text-xs leading-3 text-center font-bold ">
+        <span className="text-white text-xs leading-3 text-center font-bold " data-testid="restaurant-opened" role="alert">
           {isOpen ? "Aberto agora" : "Fechado"}
         </span>
       </div>
