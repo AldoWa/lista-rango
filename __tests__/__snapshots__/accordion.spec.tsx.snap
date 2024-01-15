@@ -43,7 +43,7 @@ exports[`accordion Should match snapshot 1`] = `
       id="accordion-flush-body-1"
     >
       <div
-        class="mt-6"
+        class="mt-6 grid grid-cols-2 gap-8"
       >
         Accordion Children
       </div>

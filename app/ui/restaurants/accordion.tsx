@@ -38,7 +38,7 @@ export function Accordion({ title, children }: Readonly<AccordionProps>) {
       </h2>
 
       <div id="accordion-flush-body-1" className={isOpen ? 'block' : 'hidden'} aria-labelledby="accordion-flush-heading-1" data-testid="accordion-body">
-        <div className="mt-6">
+        <div className="mt-6 grid grid-cols-2 gap-8">
           { children }
         </div>
       </div>
