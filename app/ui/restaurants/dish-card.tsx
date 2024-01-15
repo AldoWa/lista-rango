@@ -25,7 +25,7 @@ export function DishCard({ onClickOpenModal, title, price, hasPromo }: DishCardP
         alt="Prato Restaurant"
       />
       <div className="flex flex-col gap-y-2 p-4 text-slate-950 items-start">
-        <div className="flex items-center w-full items-start max-[600px]:flex-col">
+        <div className="flex items-center w-full items-start max-[600px]:flex-col justify-between	">
           <h2 className="text-base font-medium">{title}</h2>
           { hasPromo && (
             <span

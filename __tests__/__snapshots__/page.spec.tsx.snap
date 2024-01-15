@@ -28,7 +28,7 @@ exports[`Page Should match snapshot 1`] = `
         aria-label="Go to the restaurant"
         class="shadow-md flex items-center  rounded relative  h-28 "
         data-testid="restaurant-card"
-        href="/"
+        href="/restaurants/undefined/menu"
       >
         <img
           alt="Restaurant Logo"
@@ -74,7 +74,7 @@ exports[`Page Should match snapshot 1`] = `
         aria-label="Go to the restaurant"
         class="shadow-md flex items-center  rounded relative  h-28 "
         data-testid="restaurant-card"
-        href="/"
+        href="/restaurants/2/menu"
       >
         <img
           alt="Restaurant Logo"
