@@ -2,7 +2,6 @@ import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 import { CardRestaurant } from '@/app/ui/card-restaurant';
 
-
 describe('card-restaurant', () => {
   it('Should render the card restaurant component with isOpen true', async () => {
     render(<CardRestaurant 

@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { Days } from "../libs/types";
+import { Days } from "../../libs/types";
 
 export async function GET() {
   return NextResponse.json({
