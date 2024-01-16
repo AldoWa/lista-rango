@@ -30,4 +30,14 @@ describe('isOpened', () => {
 
     expect(opened).toBe(false)
   })
+
+  it('Should return true with is dawn', () => {
+    const opened = isOpened([ {
+      "from": '10:00',
+      "to": '01:00',
+      "days": [Days.SEGUNDA]
+    }])
+
+    expect(opened).toBe(true)
+  })
 })

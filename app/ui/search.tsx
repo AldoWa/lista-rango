@@ -18,7 +18,7 @@ export function Search(){
   }
   
   return (
-    <div data-testid="home-form" className='flex justify-center'>
+    <div data-testid="search" className='flex justify-center' >
       <input 
         type="text" 
         className='
@@ -33,6 +33,7 @@ export function Search(){
         onChange={(e) => {
           handleOnSearch(e.target.value)
         }}
+        data-testid="search-input"
         defaultValue={searchParams.get('query')?.toString()}
         placeholder='Buscar estabelecimento'
       />
