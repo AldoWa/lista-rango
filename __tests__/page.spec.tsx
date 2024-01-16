@@ -1,7 +1,23 @@
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
-import Page from '../app/page'
+import Page from '@/app/restaurants/page'
 import { Days } from '@/app/libs/types'
+
+jest.mock('next/navigation', () => {
+  return {
+    useSearchParams: jest.fn(() => {
+      return {
+        get: jest.fn(() => '?search=')
+      }
+    }),
+    usePathname: jest.fn(() => 'restaurants'),
+    useRouter: jest.fn(() => {
+      return {
+        replace: jest.fn()
+      }
+    })
+  }
+})
 
 jest.mock('../app/libs/requests', () => {
   return {
@@ -38,7 +54,7 @@ jest.mock('../app/libs/requests', () => {
 
 describe('Page', () => {
   it('Should render the first page', async () => {
-    const Result = await Page()
+    const Result = await Page({})
     render(Result)
  
     const heading = screen.getByRole('heading', { level: 1 })
@@ -51,7 +67,7 @@ describe('Page', () => {
   });
 
   it('Should render the restaurants', async () => {
-    const Result = await Page()
+    const Result = await Page({})
     render(Result)
     
     const restaurants = await screen.findAllByTestId('restaurant-card');
@@ -62,7 +78,7 @@ describe('Page', () => {
   })
 
   it('Should match snapshot', async () => {
-    const Result = await Page()
+    const Result = await Page({})
     const { container } = render(Result)
     expect(container).toMatchSnapshot()
   })

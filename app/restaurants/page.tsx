@@ -1,17 +1,24 @@
 
 import { Metadata } from 'next';
-import { CardRestaurant } from './ui/card-restaurant';
-import { getRestaurants } from './libs/requests';
-import { isOpened } from './libs/utils';
+import { CardRestaurant } from '@/app/ui/card-restaurant';
+import { getRestaurants } from '@/app/libs/requests';
+import { isOpened } from '@/app/libs/utils';
+import { Search } from '@/app/ui/search';
  
 export const metadata: Metadata = {
   title: 'Lista Rango',
   description: 'Lista Rango, onde irá listar os melhores restaurantes da região.',
 };
 
-export default async function Home() {
+interface HomeProps {
+  searchParams?: {
+    search?: string;
+  }
+}
+
+export default async function Home({ searchParams }: Readonly<HomeProps>) {
   const { data: restaurants } = await getRestaurants();
-  const restaurantsMapped = restaurants.map((restaurant) => {
+  let restaurantsMapped = restaurants.map((restaurant) => {
     return {
       id: restaurant.id,
       name: restaurant.name,
@@ -21,24 +28,18 @@ export default async function Home() {
     }
   })
 
+  const query = searchParams?.search ?? '';
+ 
+  if(query) {
+    restaurantsMapped = restaurantsMapped.filter((restaurant) => {
+      return restaurant.name.toLowerCase().includes(query.toLowerCase())
+    })
+  }
+
   return (
     <>
       <h1 className='text-2xl text-center text-gray-800 mt-8'>Bem-vindo ao Lista Rango</h1>
-      <form data-testid="home-form" className='flex justify-center'>
-        <input 
-          type="text" 
-          className='
-            shadow-md px-8
-            w-full 
-            rounded-full 
-            bg-slate-100 h-10 
-            focus:outline-none
-            my-8
-            max-w-4xl
-          '
-          placeholder='Buscar estabelecimento'
-        />
-      </form>
+      <Search />
       <div className='grid grid-cols-3 gap-9' role="list">
         {
           restaurantsMapped.map((restaurant) => {

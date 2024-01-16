@@ -7,7 +7,7 @@ exports[`Page Should match snapshot 1`] = `
   >
     Bem-vindo ao Lista Rango
   </h1>
-  <form
+  <div
     class="flex justify-center"
     data-testid="home-form"
   >
@@ -15,8 +15,9 @@ exports[`Page Should match snapshot 1`] = `
       class=" shadow-md px-8 w-full  rounded-full  bg-slate-100 h-10  focus:outline-none my-8 max-w-4xl "
       placeholder="Buscar estabelecimento"
       type="text"
+      value="?search="
     />
-  </form>
+  </div>
   <div
     class="grid grid-cols-3 gap-9"
     role="list"
@@ -57,7 +58,7 @@ exports[`Page Should match snapshot 1`] = `
       </div>
       <div
         aria-live="polite"
-        class="bg-purple-900 rounded-full
+        class="rounded-full
           w-14
           h-14
           flex
@@ -114,7 +115,7 @@ exports[`Page Should match snapshot 1`] = `
       </div>
       <div
         aria-live="polite"
-        class="bg-purple-900 rounded-full
+        class="rounded-full
           w-14
           h-14
           flex
