@@ -45,3 +45,7 @@ export interface RestaurantDishResponse {
   data: RestaurantDish[];
 }
 
+export interface RestaurantDishFormated extends RestaurantDish{
+  hasPromo: boolean;
+}
+

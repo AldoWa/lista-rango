@@ -2,7 +2,7 @@
 import { Metadata } from 'next';
 import { CardRestaurant } from '@/app/ui/card-restaurant';
 import { getRestaurants } from '@/app/libs/requests';
-import { isOpened } from '@/app/libs/utils';
+import { isValidHours } from '@/app/libs/utils';
 import { Search } from '@/app/ui/search';
  
 
@@ -21,7 +21,7 @@ export default async function Home({ searchParams }: Readonly<HomeProps>) {
       name: restaurant.name,
       address: restaurant.address,
       photoSrc: restaurant.image,
-      isOpen: isOpened(restaurant.hours)
+      isOpen: isValidHours(restaurant.hours)
     }
   })
 

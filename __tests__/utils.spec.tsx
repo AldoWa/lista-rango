@@ -1,13 +1,13 @@
 import { Days } from "@/app/libs/types";
-import { isOpened, transformMoneyCurrency } from "@/app/libs/utils";
+import { isValidHours, transformMoneyCurrency } from "@/app/libs/utils";
 
-describe('isOpened', () => {
+describe('Utils', () => {
   jest
   .useFakeTimers()
   .setSystemTime(new Date('2024-01-01 13:00:00'));
 
   it('Should return true', () => {
-    const opened = isOpened([{
+    const opened = isValidHours([{
       "from": '10:00',
       "to": '22:00',
       "days": [Days.DOMINGO,Days.QUINTA,Days.SEXTA]
@@ -22,7 +22,7 @@ describe('isOpened', () => {
   })
 
   it('Should return false', () => {
-    const opened = isOpened([ {
+    const opened = isValidHours([ {
       "from": '10:00',
       "to": '21:00',
       "days": [Days.DOMINGO,Days.QUINTA,Days.SEXTA]
@@ -32,7 +32,7 @@ describe('isOpened', () => {
   })
 
   it('Should return true with is dawn', () => {
-    const opened = isOpened([ {
+    const opened = isValidHours([ {
       "from": '10:00',
       "to": '01:00',
       "days": [Days.SEGUNDA]
