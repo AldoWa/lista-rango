@@ -43,7 +43,21 @@ export default function Page(){
               px-7
             ">Buscar no cardápio</span>
           </form>
-          <Accordion title="Teste">
+          <Accordion title="Almoços">
+            <DishCard 
+              title="Teste"
+              price="R$ 20,00"
+              onClickOpenModal={() => {}}
+              hasPromo
+            />
+            <DishCard 
+              title="Teste"
+              price="R$ 20,00"
+              onClickOpenModal={() => {}}
+              hasPromo
+            />
+          </Accordion>
+          <Accordion title="Bebidas">
             <DishCard 
               title="Teste"
               price="R$ 20,00"

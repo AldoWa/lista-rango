@@ -25,7 +25,7 @@ exports[`Page Should match snapshot 1`] = `
       aria-label="Go to the restaurant"
       class="shadow-md flex items-center  rounded relative  h-28 "
       data-testid="restaurant-card"
-      href="/restaurants/undefined/menu"
+      href="/restaurants/1/menu"
     >
       <img
         alt="Restaurant Logo"
@@ -46,24 +46,35 @@ exports[`Page Should match snapshot 1`] = `
           class="text-base"
           data-testid="restaurant-name"
         >
-          Estrogonofe de frango
+          Restaurant 1
         </p>
         <p
           class="text-xs"
           data-testid="restaurant-address"
-        />
+        >
+          Address 1
+        </p>
       </div>
       <div
         aria-live="polite"
-        class="bg-purple-900 rounded-full w-14 h-14 flex items-center justify-center absolute -top-2 -right-4 "
+        class="bg-purple-900 rounded-full
+          w-14
+          h-14
+          flex
+          items-center
+          justify-center
+          absolute
+          -top-2 -right-4
+          bg-[#B5ABD4]
+        "
         role="status"
       >
         <span
-          class="text-white text-xs leading-3 text-center font-bold "
+          class="text-white text-xs leading-3 text-center font-bold"
           data-testid="restaurant-opened"
           role="alert"
         >
-          Aberto agora
+          Fechado
         </span>
       </div>
     </a>
@@ -103,15 +114,24 @@ exports[`Page Should match snapshot 1`] = `
       </div>
       <div
         aria-live="polite"
-        class="bg-purple-900 rounded-full w-14 h-14 flex items-center justify-center absolute -top-2 -right-4 "
+        class="bg-purple-900 rounded-full
+          w-14
+          h-14
+          flex
+          items-center
+          justify-center
+          absolute
+          -top-2 -right-4
+          bg-[#B5ABD4]
+        "
         role="status"
       >
         <span
-          class="text-white text-xs leading-3 text-center font-bold "
+          class="text-white text-xs leading-3 text-center font-bold"
           data-testid="restaurant-opened"
           role="alert"
         >
-          Aberto agora
+          Fechado
         </span>
       </div>
     </a>

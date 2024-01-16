@@ -7,22 +7,15 @@ jest.mock('../app/libs/requests', () => {
   return {
     getRestaurants: jest.fn(() => Promise.resolve({ data: [
       {
-        "restaurantId": 1,
-        "name": 'Estrogonofe de frango',
-        "image": 'https://www.minhareceita.com.br/app/uploads/2020/09/Estrogonofe-saudavel-desktop.jpg',
-        "price": 10.00,
-        "group": 'Almoço',
-        "sales": [
+        id: 1,
+        name: 'Restaurant 1',
+        address: 'Address 1',
+        image: 'https://via.placeholder.com/112x112',
+        hours: [
           {
-            "description": 'Promo Almoço',
-            "price": 5.00,
-            "hours": [
-              {
-                "from": "11:00",
-                "to": "12:00",
-                "days": [Days.DOMINGO,Days.QUINTA,Days.SEXTA]
-              }
-            ]
+            "from": '10:00',
+            "to": '22:00',
+            "days": [Days.DOMINGO,Days.QUINTA,Days.SEXTA]
           }
         ]
       },
