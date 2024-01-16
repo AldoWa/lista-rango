@@ -38,7 +38,7 @@ exports[`card-restaurant Should match snapshot 1`] = `
     </div>
     <div
       aria-live="polite"
-      class="bg-purple-900 rounded-full
+      class="rounded-full
           w-14
           h-14
           flex
