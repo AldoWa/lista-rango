@@ -43,6 +43,26 @@ const responseRestaurant = [
     ]
   },
   {
+    "restaurantId": 1,
+    "name": 'Coca Gelada',
+    "image": 'https://www.cozinhadonabenta.com.br/wp-content/uploads/2020/10/LASANHA-BOLONHESA.jpg',
+    "price": 6.00,
+    "group": 'Bebida',
+    "sales": [
+      {
+        "description": 'Promo Coca',
+        "price": 3.00,
+        "hours": [
+          {
+            "from": "11:00",
+            "to": "12:00",
+            "days": [Days.DOMINGO,Days.QUARTA,Days.SABADO]
+          }
+        ]
+      }
+    ]
+  },
+  {
     "restaurantId": 2,
     "name": 'Pizza de calabresa',
     "image": 'https://cdn0.tudoreceitas.com/pt/posts/9/8/3/pizza_calabresa_e_mussarela_4389_600.jpg',

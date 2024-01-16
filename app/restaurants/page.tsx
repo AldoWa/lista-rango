@@ -5,10 +5,7 @@ import { getRestaurants } from '@/app/libs/requests';
 import { isOpened } from '@/app/libs/utils';
 import { Search } from '@/app/ui/search';
  
-export const metadata: Metadata = {
-  title: 'Lista Rango',
-  description: 'Lista Rango, onde irá listar os melhores restaurantes da região.',
-};
+
 
 interface HomeProps {
   searchParams?: {

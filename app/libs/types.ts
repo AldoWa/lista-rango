@@ -25,3 +25,23 @@ export interface Restaurant {
 export interface RestaurantResponse {
   data: Restaurant[];
 }
+
+export interface RestaurantDish {
+  restaurantId: number;
+  name: string;
+  image: string;
+  price: number;
+  group: string;
+  sales: [
+    {
+      description: string;
+      price: number;
+      hours: Hour[]
+    }
+  ]
+}
+
+export interface RestaurantDishResponse {
+  data: RestaurantDish[];
+}
+

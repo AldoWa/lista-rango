@@ -4,9 +4,43 @@ import VeganImage from "@/public/vegan-restaurant.png";
 import { Accordion } from "@/app/ui/restaurants/accordion";
 import { DishCard } from "@/app/ui/restaurants/dish-card";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { getRestaurant } from "@/app/libs/requests";
+import { RestaurantDish } from "@/app/libs/types";
 
+interface PageProps {
+  params: {
+    id: string;
+  }
+}
 
-export default function Page(){
+export default function Page({ params: { id } }: PageProps){
+  const [dishByCategory, setDishByCategory] = useState<Record<string, RestaurantDish[]>>({})
+  const [loading, setLoading] = useState(true)
+  useEffect(() => {
+    async function getItems(){
+      const { data } = await getRestaurant(id)
+
+      const dataReduced = data.reduce((acc, item) => {
+        const group = item.group
+        if(!acc[group]) {
+          acc[group] = []
+        }
+        acc[group].push(item)
+        return acc
+      }, {} as Record<string, RestaurantDish[]>)
+
+      setDishByCategory(dataReduced)
+    }
+    try {
+      getItems()
+    } catch(err){
+      console.log(err)
+    } finally {
+      setLoading(false)
+    }
+  }, [id])
+
   return (
     <>
       <div className="inline-flex	items-center max-w-3xl mt-6 mb-4">
@@ -43,34 +77,29 @@ export default function Page(){
               px-7
             ">Buscar no cardápio</span>
           </form>
-          <Accordion title="Almoços">
-            <DishCard 
-              title="Teste"
-              price="R$ 20,00"
-              onClickOpenModal={() => {}}
-              hasPromo
-            />
-            <DishCard 
-              title="Teste"
-              price="R$ 20,00"
-              onClickOpenModal={() => {}}
-              hasPromo
-            />
-          </Accordion>
-          <Accordion title="Bebidas">
-            <DishCard 
-              title="Teste"
-              price="R$ 20,00"
-              onClickOpenModal={() => {}}
-              hasPromo
-            />
-            <DishCard 
-              title="Teste"
-              price="R$ 20,00"
-              onClickOpenModal={() => {}}
-              hasPromo
-            />
-          </Accordion>
+          { loading ? <p>Carregando cardapio...</p> :
+
+            Object.keys(dishByCategory).map((category, index) => {
+              return (
+                <Accordion title={category} key={category}>
+                  { 
+                    dishByCategory[category].map((dish) => {
+                      return (
+                        <DishCard 
+                          key={dish.name}
+                          title={dish.name}
+                          price={new Intl.NumberFormat('pt-Br', { style: 'currency', currency: 'BRL' }).format(dish.price)}
+                          onClickOpenModal={() => {}}
+                          hasPromo
+                        />
+                      )
+                    })
+                  }
+                  
+                </Accordion>
+              )
+            })
+          }
         </div>
         <div className="w-64 h-[48rem] bg-gray-600 max-[1280px]:m-6 max-[1280px]:w-96"></div>
       </section>
