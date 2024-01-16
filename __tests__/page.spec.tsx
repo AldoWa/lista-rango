@@ -11,11 +11,7 @@ jest.mock('next/navigation', () => {
       }
     }),
     usePathname: jest.fn(() => 'restaurants'),
-    useRouter: jest.fn(() => {
-      return {
-        replace: jest.fn()
-      }
-    })
+    ...jest.requireActual('next-router-mock'),
   }
 })
 
@@ -62,7 +58,7 @@ describe('Page', () => {
     expect(heading).toBeInTheDocument()
     expect(heading).toHaveTextContent('Bem-vindo ao Lista Rango')
 
-    const form = screen.getByTestId('home-form')
+    const form = screen.getByTestId('search')
     expect(form).toBeInTheDocument()
   });
 
@@ -74,6 +70,19 @@ describe('Page', () => {
 
     expect(restaurants.length).toBe(2)
 
+    expect(restaurants[0]).toBeInTheDocument()
+  })
+
+  it('Should filter the restaurants', async () => {
+    const Result = await Page({
+      searchParams: {
+        search: 'Restaurant 1'
+      }
+    })
+    render(Result)
+
+    const restaurants = await screen.findAllByTestId('restaurant-card');
+    expect(restaurants.length).toBe(1)
     expect(restaurants[0]).toBeInTheDocument()
   })
 

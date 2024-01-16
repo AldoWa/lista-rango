@@ -23,7 +23,7 @@ export default function Page(){
       </div>
       <section className="grid grid-cols-[minmax(802px,_1fr)_282px] gap-x-36 max-[1280px]:grid-cols-1">
         <div>
-          <form data-testid="home-form" className='flex justify-start relative' name="search-food">
+          <form data-testid="search" className='flex justify-start relative' name="search-food">
             <input 
               type="text" 
               className='

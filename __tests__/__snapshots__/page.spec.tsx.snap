@@ -9,10 +9,11 @@ exports[`Page Should match snapshot 1`] = `
   </h1>
   <div
     class="flex justify-center"
-    data-testid="home-form"
+    data-testid="search"
   >
     <input
       class=" shadow-md px-8 w-full  rounded-full  bg-slate-100 h-10  focus:outline-none my-8 max-w-4xl "
+      data-testid="search-input"
       placeholder="Buscar estabelecimento"
       type="text"
       value="?search="
