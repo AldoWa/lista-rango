@@ -2,6 +2,7 @@
 import { Metadata } from 'next';
 import { CardRestaurant } from './ui/card-restaurant';
 import { getRestaurants } from './libs/requests';
+import { isOpened } from './libs/utils';
  
 export const metadata: Metadata = {
   title: 'Lista Rango',
@@ -10,6 +11,15 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const { data: restaurants } = await getRestaurants();
+  const restaurantsMapped = restaurants.map((restaurant) => {
+    return {
+      id: restaurant.id,
+      name: restaurant.name,
+      address: restaurant.address,
+      photoSrc: restaurant.image,
+      isOpen: isOpened(restaurant.hours)
+    }
+  })
 
   return (
     <>
@@ -31,15 +41,15 @@ export default async function Home() {
       </form>
       <div className='grid grid-cols-3 gap-9' role="list">
         {
-          restaurants.map((restaurant) => {
+          restaurantsMapped.map((restaurant) => {
             return (
               <CardRestaurant
                 id={restaurant.id}
                 key={'restaurant-card-' + restaurant.id}
                 name={restaurant.name}
                 address={restaurant.address}
-                isOpen={true}
-                photoSrc={restaurant.image}
+                isOpen={restaurant.isOpen}
+                photoSrc={restaurant.photoSrc}
               />
             )
           })

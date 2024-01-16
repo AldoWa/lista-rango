@@ -57,7 +57,7 @@ export function CardRestaurant({
       <div
         aria-live="polite"
         role="status"
-        className="bg-purple-900 rounded-full
+        className={`bg-purple-900 rounded-full
           w-14
           h-14
           flex
@@ -65,9 +65,10 @@ export function CardRestaurant({
           justify-center
           absolute
           -top-2 -right-4
-        "
+          ${isOpen ? '' : 'bg-[#B5ABD4]'}
+        `}
       >
-        <span className="text-white text-xs leading-3 text-center font-bold " data-testid="restaurant-opened" role="alert">
+        <span className={`text-white text-xs leading-3 text-center font-bold`} data-testid="restaurant-opened" role="alert">
           {isOpen ? "Aberto agora" : "Fechado"}
         </span>
       </div>

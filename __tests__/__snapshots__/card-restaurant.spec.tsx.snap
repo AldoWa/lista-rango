@@ -38,11 +38,20 @@ exports[`card-restaurant Should match snapshot 1`] = `
     </div>
     <div
       aria-live="polite"
-      class="bg-purple-900 rounded-full w-14 h-14 flex items-center justify-center absolute -top-2 -right-4 "
+      class="bg-purple-900 rounded-full
+          w-14
+          h-14
+          flex
+          items-center
+          justify-center
+          absolute
+          -top-2 -right-4
+          bg-[#B5ABD4]
+        "
       role="status"
     >
       <span
-        class="text-white text-xs leading-3 text-center font-bold "
+        class="text-white text-xs leading-3 text-center font-bold"
         data-testid="restaurant-opened"
         role="alert"
       >

@@ -8,7 +8,7 @@ export enum Days {
   SABADO = 7
 }
 
-interface Hour {
+export interface Hour {
   from: string;
   to: string;
   days: Days[];

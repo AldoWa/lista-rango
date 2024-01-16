@@ -12,8 +12,13 @@ export async function GET() {
         hours: [
           {
             "from": '10:00',
-            "to": '22:00',
+            "to": '00:00',
             "days": [Days.DOMINGO,Days.QUINTA,Days.SEXTA]
+          },
+          {
+            "from": '05:00',
+            "to": '01:00',
+            "days": [Days.SEGUNDA,Days.QUARTA,Days.SABADO]
           }
         ]
       },
@@ -37,9 +42,9 @@ export async function GET() {
         image: 'https://via.placeholder.com/112x112',
         hours: [
           {
-            "from": '17:00',
+            "from": '10:00',
             "to": '01:00',
-            "days": [Days.DOMINGO, Days.SEGUNDA, Days.QUINTA, Days.SEXTA]
+            "days": [Days.DOMINGO, Days.SEGUNDA, Days.TERCA, Days.QUINTA, Days.SEXTA]
           }
         ]
       },

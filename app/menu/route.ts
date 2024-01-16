@@ -30,8 +30,8 @@ const responseRestaurant = [
     "group": 'Almoço',
     "sales": [
       {
-        "description": String,
-        "price": Number,
+        "description": 'Promo Almoço',
+        "price": 6.00,
         "hours": [
           {
             "from": "11:00",
