@@ -1,5 +1,5 @@
 import { Days } from "@/app/libs/types";
-import { isOpened } from "@/app/libs/utils";
+import { isOpened, transformMoneyCurrency } from "@/app/libs/utils";
 
 describe('isOpened', () => {
   jest
@@ -39,5 +39,12 @@ describe('isOpened', () => {
     }])
 
     expect(opened).toBe(true)
+  })
+
+  it('Should transform number to BRL currency', () => {
+    const value = 10.00
+    const currency = transformMoneyCurrency(value)
+
+    expect(currency).toBe('R$ 10,00')
   })
 })

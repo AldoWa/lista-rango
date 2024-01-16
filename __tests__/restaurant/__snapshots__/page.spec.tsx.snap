@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Restaurant -> Page Should match snapshot 1`] = `
+<div>
+  <div
+    class="inline-flex items-center max-w-3xl mt-6 mb-4"
+    data-testid="banner"
+  >
+    <img
+      alt="Picture restaurant"
+      data-nimg="1"
+      decoding="async"
+      height="145"
+      loading="lazy"
+      src="/_next/image?url=%2Fimg.jpg&w=384&q=100"
+      srcset="/_next/image?url=%2Fimg.jpg&w=256&q=100 1x, /_next/image?url=%2Fimg.jpg&w=384&q=100 2x"
+      style="color: transparent;"
+      width="145"
+    />
+    <div
+      class="flex flex-col gap-y-1"
+    >
+      <h1
+        class="text-2xl font-medium"
+      >
+        Nome do Restaurante
+      </h1>
+      <p
+        class="font-normal text-base"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+      <ul
+        class="flex flex-col gap-y-0.5"
+      >
+        <li
+          class="text-xs"
+        >
+          <span>
+            Segunda à Sexta:
+          </span>
+           
+          <b>
+            11:30 às 15:00
+          </b>
+        </li>
+        <li
+          class="text-xs"
+        >
+          <span>
+            Sábados:
+          </span>
+           
+          <b>
+            11:30 às 22:00
+          </b>
+        </li>
+        <li
+          class="text-xs"
+        >
+          <span>
+            Domingos e Feriados:
+          </span>
+           
+          <b>
+            11:30 às 15:00
+          </b>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <section
+    class="grid grid-cols-[minmax(802px,_1fr)_282px] gap-x-36 max-[1280px]:grid-cols-1"
+  >
+    <div>
+      <div
+        class="flex justify-start relative"
+        data-testid="search"
+      >
+        <input
+          class=" shadow-md  pr-8 pl-52 w-full  rounded-full  bg-slate-100 h-10  focus:outline-none my-8 max-w-4xl "
+          type="text"
+        />
+        <span
+          class="absolute flex items-center rounded-l-full h-10 bottom-8 left-0 bg-white px-7 "
+        >
+          Buscar no cardápio
+        </span>
+      </div>
+      <p>
+        Carregando cardapio...
+      </p>
+    </div>
+    <div
+      class="w-64 h-[48rem] bg-gray-600 max-[1280px]:m-6 max-[1280px]:w-96"
+    />
+  </section>
+</div>
+`;

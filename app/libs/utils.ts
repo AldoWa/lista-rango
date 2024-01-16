@@ -24,3 +24,7 @@ export function isOpened(hours: Hour[]){
 
   return verifyHourIsOpened && verifyTodayIsOpened;
 }
+
+export function transformMoneyCurrency(value: number){
+  return new Intl.NumberFormat('pt-Br', { style: 'currency', currency: 'BRL' }).format(value)
+}

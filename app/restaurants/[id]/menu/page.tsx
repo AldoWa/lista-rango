@@ -19,6 +19,7 @@ export default function Page({ params: { id } }: PageProps){
   const [loading, setLoading] = useState(true)
   useEffect(() => {
     async function getItems(){
+      try {
       const { data } = await getRestaurant(id)
 
       const dataReduced = data.reduce((acc, item) => {
@@ -30,20 +31,20 @@ export default function Page({ params: { id } }: PageProps){
         return acc
       }, {} as Record<string, RestaurantDish[]>)
 
-      setDishByCategory(dataReduced)
+        setDishByCategory(dataReduced)
+      } catch(err){
+        console.log(err)
+      } finally {
+        setLoading(false)
+      }
     }
-    try {
-      getItems()
-    } catch(err){
-      console.log(err)
-    } finally {
-      setLoading(false)
-    }
+    getItems()
+    
   }, [id])
 
   return (
     <>
-      <div className="inline-flex	items-center max-w-3xl mt-6 mb-4">
+      <div className="inline-flex	items-center max-w-3xl mt-6 mb-4" data-testid="banner">
         <Image src={VeganImage} alt="Picture restaurant" height={145} width={145} quality={100}/>
         <div className="flex flex-col gap-y-1">
           <h1 className="text-2xl font-medium">Nome do Restaurante</h1>
@@ -57,7 +58,7 @@ export default function Page({ params: { id } }: PageProps){
       </div>
       <section className="grid grid-cols-[minmax(802px,_1fr)_282px] gap-x-36 max-[1280px]:grid-cols-1">
         <div>
-          <form data-testid="search" className='flex justify-start relative' name="search-food">
+          <div data-testid="search" className='flex justify-start relative'>
             <input 
               type="text" 
               className='
@@ -76,7 +77,7 @@ export default function Page({ params: { id } }: PageProps){
               bg-white
               px-7
             ">Buscar no cardápio</span>
-          </form>
+          </div>
           { loading ? <p>Carregando cardapio...</p> :
 
             Object.keys(dishByCategory).map((category, index) => {
