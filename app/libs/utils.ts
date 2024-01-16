@@ -6,7 +6,7 @@ import { Hour } from "./types";
  * 2 - Comparar o Dia de Hoje com os dias do Array e a Hora
  */
 
-export function isOpened(hours: Hour[]){
+export function isValidHours(hours: Hour[]){
   const todayDay = moment().day();
   const verifyTodayIsOpened = hours.some((hour) => {
     return hour.days.includes(todayDay + 1);

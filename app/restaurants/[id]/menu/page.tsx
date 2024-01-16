@@ -6,7 +6,8 @@ import { DishCard } from "@/app/ui/restaurants/dish-card";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { getRestaurant } from "@/app/libs/requests";
-import { RestaurantDish } from "@/app/libs/types";
+import { RestaurantDish, RestaurantDishFormated } from "@/app/libs/types";
+import { isValidHours, transformMoneyCurrency } from "@/app/libs/utils";
 
 interface PageProps {
   params: {
@@ -15,7 +16,7 @@ interface PageProps {
 }
 
 export default function Page({ params: { id } }: PageProps){
-  const [dishByCategory, setDishByCategory] = useState<Record<string, RestaurantDish[]>>({})
+  const [dishByCategory, setDishByCategory] = useState<Record<string, RestaurantDishFormated[]>>({})
   const [loading, setLoading] = useState(true)
   useEffect(() => {
     async function getItems(){
@@ -27,9 +28,13 @@ export default function Page({ params: { id } }: PageProps){
         if(!acc[group]) {
           acc[group] = []
         }
-        acc[group].push(item)
+        const itemAtt: RestaurantDishFormated = {
+          ...item,
+          hasPromo: isValidHours(item.sales[0].hours),
+        }
+        acc[group].push(itemAtt)
         return acc
-      }, {} as Record<string, RestaurantDish[]>)
+      }, {} as Record<string, RestaurantDishFormated[]>)
 
         setDishByCategory(dataReduced)
       } catch(err){
@@ -89,9 +94,9 @@ export default function Page({ params: { id } }: PageProps){
                         <DishCard 
                           key={dish.name}
                           title={dish.name}
-                          price={new Intl.NumberFormat('pt-Br', { style: 'currency', currency: 'BRL' }).format(dish.price)}
+                          price={transformMoneyCurrency(dish.price)}
                           onClickOpenModal={() => {}}
-                          hasPromo
+                          hasPromo={dish.hasPromo}
                         />
                       )
                     })
